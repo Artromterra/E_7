@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "_forms.html" as forms %}
+
+{% block content %}
+    {% for post in posts %}
+      <h2><a href="{{ url_for('posts.detail', tag=post.tag) }}">{{ post.title }}</a></h2>
+      <p>{{ post.body|truncate(100) }}</p>
+      <p>
+        {{ post.created_at.strftime('%H:%M %d-%m-%Y') }} |
+        {% with total=post.comments|length %}
+            {{ total }} комментари {%- if total %10 in (2,3,4) %}я{%- elif total %10 in (5,6,7,8,9,0) -%}ев{%- else -%}й{%- endif -%}
+        {% endwith %} |
+        {% with total=post.tag %}
+           Тэг: {{ total }} 
+        {% endwith %}
+      </p>
+    {% endfor %}
+    <hr>
+    <h2>Добавить объявление</h2>
+    <form action="." method="post">
+      {{ forms.render(form) }}
+    <hr>
+    <div class="actions">
+      <input type="submit" class="btn primary" value="Добавить">
+    </div>
+    </form>
+    <hr>
+{% endblock %}
