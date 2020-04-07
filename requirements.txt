@@ -1,0 +1,7 @@
+Flask
+redis==3.4.1
+flask-caching==1.8.0
+WTForms
+mongoengine
+flask_mongoengine
+flask-script
