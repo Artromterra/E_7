@@ -2,7 +2,9 @@
 
 Создать директорию app, скачать в эту директорию папку tumblelog.
 
-В директории создать виртуальное окружение python3 -m venv env, запустить: source env/bin/activate.
+В директории создать виртуальное окружение python3 -m venv env, запустить: source env/bin/activate
+
+Устанавливаем зависимости в виртуальное окружение pip3 install -r requirements.txt
 
 Загружаем образ redis и mongo из реестра docker pull redis, docker pull mongo
 
