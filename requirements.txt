@@ -1,5 +1,5 @@
 Flask
-redis==3.4.1
+redis==4.5.3
 flask-caching==1.8.0
 WTForms
 mongoengine
